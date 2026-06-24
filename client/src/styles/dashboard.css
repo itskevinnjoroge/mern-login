@@ -1,0 +1,209 @@
+/* src/styles/dashboard.css */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Page shell ───────────────────────────────────────── */
+.dash-root {
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.dash-root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 59px,
+      rgba(255, 255, 255, 0.03) 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 59px,
+      rgba(255, 255, 255, 0.03) 60px
+    );
+}
+
+.accent-block {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 340px;
+  height: 340px;
+  background: #c8f135;
+  opacity: 0.08;
+  transform: rotate(25deg);
+  border-radius: 4px;
+}
+
+.accent-block-2 {
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #c8f135;
+  opacity: 0.12;
+  transform: rotate(15deg);
+  border-radius: 4px;
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+.dash-card {
+  position: relative;
+  background: #111;
+  border: 1px solid #222;
+  width: 480px;
+  padding: 52px 48px 48px;
+  animation: slideUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-corner {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 28px;
+  height: 28px;
+  border-top: 2px solid #c8f135;
+  border-left: 2px solid #c8f135;
+}
+.card-corner.br {
+  top: auto;
+  left: auto;
+  bottom: -1px;
+  right: -1px;
+  border-top: none;
+  border-left: none;
+  border-bottom: 2px solid #c8f135;
+  border-right: 2px solid #c8f135;
+}
+
+/* ── Header row (title + avatar) ──────────────────────── */
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #c8f135;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.heading {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 52px;
+  color: #f5f5f5;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  background: rgba(200, 241, 53, 0.1);
+  border: 1px solid rgba(200, 241, 53, 0.25);
+  color: #c8f135;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── User info block ──────────────────────────────────── */
+.user-block {
+  background: #0a0a0a;
+  border: 1px solid #1e1e1e;
+  border-radius: 2px;
+  padding: 4px 0;
+  margin-bottom: 32px;
+}
+
+.user-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+}
+
+.user-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+  font-weight: 500;
+}
+
+.user-value {
+  font-size: 14px;
+  color: #d0d0d0;
+  font-weight: 400;
+}
+
+.divider-line {
+  height: 1px;
+  background: #1e1e1e;
+  margin: 0 20px;
+}
+
+/* ── Logout button ────────────────────────────────────── */
+.logout-btn {
+  width: 100%;
+  background: transparent;
+  color: #c8f135;
+  border: 1px solid rgba(200, 241, 53, 0.35);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  padding: 14px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.15s;
+  border-radius: 2px;
+}
+.logout-btn:hover {
+  background: rgba(200, 241, 53, 0.06);
+  border-color: rgba(200, 241, 53, 0.6);
+  transform: translateY(-1px);
+}
+.logout-btn:active {
+  transform: translateY(0);
+}
